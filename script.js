@@ -1,5 +1,5 @@
 const button = document.querySelector('button')
-const input = document.querySelector('name')
+const input = document.querySelector('input')
 const imageDiv = document.querySelector('div')
 
 const getAvatar = async () => {
