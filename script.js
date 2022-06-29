@@ -1,16 +1,16 @@
 const button = document.querySelector('button')
-const input = document.querySelector('input')
+const input = document.querySelector('name')
 const imageDiv = document.querySelector('div')
 
-const getDog = async () => {
-  let breed = input.value
+const getAvatar = async () => {
+  let avatar = input.value
   let response = await axios.get(
-    `https://dog.ceo/api/breed/${breed}/images/random`
+    `https://avatars.dicebear.com/api/male/${avatar}svg`
   )
-  let dogPic = response.data.message
+  let CustomPic = response.data.message
   let status = response.data.status
   console.log(status)
-  imageDiv.innerHTML = `<img src=${dogPic} alt="dog" />`
+  imageDiv.innerHTML = `<img src=${CustomPic} alt="Custom Avatar" />`
 }
 
-button.addEventListener('click', getDog)
+button.addEventListener('click', getAvatar)
