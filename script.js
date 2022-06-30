@@ -1,16 +1,18 @@
 const button = document.querySelector('button')
 const input = document.querySelector('input')
-const imageDiv = document.querySelector('div')
+const imageDiv = document.querySelector('.pic')
 
 const getAvatar = async () => {
   let avatar = input.value
   let response = await axios.get(
     `https://avatars.dicebear.com/api/adventurer/${avatar}.svg`
   )
-  let CustomPic = response.data.message
-  let status = response.data.status
-  console.log(response)
   imageDiv.innerHTML = response.data
 }
 
+const print = () => {
+  document.querySelector('.text').innerHTML = 'Your Avatar :'
+}
+
 button.addEventListener('click', getAvatar)
+button.addEventListener('click', print)
