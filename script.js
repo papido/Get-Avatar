@@ -5,12 +5,12 @@ const imageDiv = document.querySelector('div')
 const getAvatar = async () => {
   let avatar = input.value
   let response = await axios.get(
-    `https://avatars.dicebear.com/api/male/${avatar}svg`
+    `https://avatars.dicebear.com/api/adventurer/${avatar}.svg`
   )
   let CustomPic = response.data.message
   let status = response.data.status
-  console.log(status)
-  imageDiv.innerHTML = `<img src=${CustomPic} alt="Custom Avatar" />`
+  console.log(response)
+  imageDiv.innerHTML = response.data
 }
 
 button.addEventListener('click', getAvatar)
