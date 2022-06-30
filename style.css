@@ -1,0 +1,14 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.text {
+    display: flex;
+    font-weight: bold;
+    font-size: medium;
+    margin: 50px 50px;
+    
+}
